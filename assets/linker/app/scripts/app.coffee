@@ -1,8 +1,7 @@
 'use strict'
 
-angular.module('dubatoApp', [])
+angular.module('dubatoApp', ['ngRoute'])
   .config ($routeProvider) ->
-    console.log "coucou"
     $routeProvider
       .when '/',
         templateUrl: 'views/main.html'
