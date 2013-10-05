@@ -1,5 +1,6 @@
 'use strict'
 
+alert 'ici aussi ?'
 angular.module('dubatoApp', [])
   .config ($routeProvider) ->
     $routeProvider

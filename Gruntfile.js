@@ -60,7 +60,7 @@ module.exports = function (grunt) {
 
     // All of the rest of your app scripts imported here
     // 'linker/**/*.js',
-    
+
     'linker/app/bower_components/angular/angular.js',
 
     'linker/app/bower_components/angular-**/*.js',
@@ -220,15 +220,15 @@ module.exports = function (grunt) {
         files: [
           {
             expand: true,
-            cwd: 'assets/js/',
+            cwd: 'assets/app/',
             src: ['**/*.coffee'],
-            dest: '.tmp/public/js/',
+            dest: '.tmp/public/app/',
             ext: '.js'
           }, {
             expand: true,
-            cwd: 'assets/linker/js/',
+            cwd: 'assets/linker/app/',
             src: ['**/*.coffee'],
-            dest: '.tmp/public/linker/js/',
+            dest: '.tmp/public/linker/app/',
             ext: '.js'
           }
         ]
