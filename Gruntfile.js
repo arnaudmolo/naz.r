@@ -59,7 +59,17 @@ module.exports = function (grunt) {
     // *->    put other dependencies here   <-*
 
     // All of the rest of your app scripts imported here
-    'linker/**/*.js'
+    // 'linker/**/*.js',
+    
+    'linker/app/bower_components/angular/angular.js',
+
+    'linker/app/bower_components/angular-**/*.js',
+    
+    'linker/app/bower_components/jquery/jquery.js',
+
+    'linker/js/**/*.js',
+
+    'linker/app/scripts/**/*.js',
   ];
 
 
