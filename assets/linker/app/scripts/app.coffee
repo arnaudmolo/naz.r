@@ -1,8 +1,8 @@
 'use strict'
 
-alert 'ici aussi ?'
 angular.module('dubatoApp', [])
   .config ($routeProvider) ->
+    console.log "coucou"
     $routeProvider
       .when '/',
         templateUrl: 'views/main.html'
