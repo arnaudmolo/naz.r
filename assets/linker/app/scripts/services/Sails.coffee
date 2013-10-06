@@ -1,12 +1,9 @@
 'use strict'
 
 angular.module('dubatoApp')
-  .provider 'Sails', () ->
+  .provider 'Sails', ->
     socket = io.connect()
-    console.log "initialisation de socket"
-      # Method for instantiating
     this.$get = ($rootScope) ->
-      console.log "je sais pas"
       {
         on: (event, cb) ->
           socket.on event, ->

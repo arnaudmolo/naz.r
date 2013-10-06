@@ -202,7 +202,7 @@ module.exports = function (grunt) {
         files: [
           {
           expand: true,
-          cwd: 'assets/linker/app/styles/',
+          cwd: '<%= yeoman.app %>/styles/',
           src: ['*.less'],
           dest: '.tmp/public/linker/app/styles/',
           ext: '.css'
@@ -231,7 +231,7 @@ module.exports = function (grunt) {
             ext: '.js'
           }, {
             expand: true,
-            cwd: 'assets/linker/app/',
+            cwd: '<%= yeoman.app %>/',
             src: ['**/*.coffee'],
             dest: '.tmp/public/linker/app/',
             ext: '.js'
