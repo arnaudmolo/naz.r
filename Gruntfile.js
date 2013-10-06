@@ -17,6 +17,11 @@
 module.exports = function (grunt) {
 
 
+  var yeomanConfig = {
+    app: 'assets/linker/app',
+    dist: 'dist'
+  };
+
 
   /**
    * CSS files to inject in order
@@ -29,7 +34,7 @@ module.exports = function (grunt) {
    */
 
   var cssFilesToInject = [
-    'linker/**/*.css'
+    'linker/app/styles/**/*.css'
   ];
 
 
@@ -54,12 +59,21 @@ module.exports = function (grunt) {
 
     // A simpler boilerplate library for getting you up and running w/ an
     // automatic listener for incoming messages from Socket.io.
-    'linker/js/app.js',
 
     // *->    put other dependencies here   <-*
 
     // All of the rest of your app scripts imported here
-    'linker/**/*.js'
+    // 'linker/**/*.js',
+
+    'linker/app/bower_components/angular/angular.js',
+
+    'linker/app/bower_components/angular-**/*.js',
+    
+    'linker/app/bower_components/jquery/jquery.js',
+
+    'linker/js/**/*.js',
+
+    'linker/app/scripts/**/*.js',
   ];
 
 
@@ -117,7 +131,7 @@ module.exports = function (grunt) {
   
   
   templateFilesToInject = templateFilesToInject.map(function (path) {
-    return 'assets/' + path;
+    return '.tmp/public/' + path;
   });
 
 
@@ -136,6 +150,7 @@ module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
+    yeoman: yeomanConfig,
     pkg: grunt.file.readJSON('package.json'),
 
     copy: {
@@ -187,9 +202,9 @@ module.exports = function (grunt) {
         files: [
           {
           expand: true,
-          cwd: 'assets/styles/',
+          cwd: '<%= yeoman.app %>/styles/',
           src: ['*.less'],
-          dest: '.tmp/public/styles/',
+          dest: '.tmp/public/linker/app/styles/',
           ext: '.css'
         }, {
           expand: true,
@@ -210,15 +225,15 @@ module.exports = function (grunt) {
         files: [
           {
             expand: true,
-            cwd: 'assets/js/',
+            cwd: 'assets/app/',
             src: ['**/*.coffee'],
-            dest: '.tmp/public/js/',
+            dest: '.tmp/public/app/',
             ext: '.js'
           }, {
             expand: true,
-            cwd: 'assets/linker/js/',
+            cwd: '<%= yeoman.app %>/',
             src: ['**/*.coffee'],
-            dest: '.tmp/public/linker/js/',
+            dest: '.tmp/public/linker/app/',
             ext: '.js'
           }
         ]
