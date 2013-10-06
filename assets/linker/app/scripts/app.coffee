@@ -7,7 +7,6 @@ angular.module('dubatoApp', ['ngRoute'])
         templateUrl: ->
           'views/main.html'
         
-        
         controller: 'MainCtrl'
       .otherwise
         redirectTo: '/'

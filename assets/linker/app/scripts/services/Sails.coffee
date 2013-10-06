@@ -5,7 +5,7 @@ angular.module('dubatoApp')
     socket = io.connect()
     console.log "initialisation de socket"
       # Method for instantiating
-    this.$get = () ->
+    this.$get = ($rootScope) ->
       console.log "je sais pas"
       {
         on: (event, cb) ->
