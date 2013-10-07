@@ -1,5 +1,5 @@
 /**
- * PostsController
+ * UserController
  *
  * @module      :: Controller
  * @description	:: A set of functions called `actions`.
@@ -22,9 +22,29 @@ module.exports = {
 
   /**
    * Overrides for the settings in `config/controllers.js`
-   * (specific to PostsController)
+   * (specific to UserController)
    */
   _config: {}
 
   
+};
+
+module.exports.blueprints = {
+
+  // Expose a route for every method,
+  // e.g.
+  //  `/user/foo` => `foo: function (req, res) {}`
+  actions: true,
+
+
+  // Expose a RESTful API, e.g.
+  //  `post /user` => `create: function (req, res) {}`
+  rest: true,
+
+
+  // Expose simple CRUD shortcuts, e.g.
+  //  `/user/create` => `create: function (req, res) {}`
+  // (useful for prototyping)
+  shortcuts: true 
+
 };

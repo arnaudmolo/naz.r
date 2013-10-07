@@ -6,7 +6,7 @@ angular.module('dubatoApp', ['ngRoute'])
       .when '/',
         templateUrl: ->
           'views/main.html'
-        
         controller: 'MainCtrl'
       .otherwise
         redirectTo: '/'
+  .run ->
