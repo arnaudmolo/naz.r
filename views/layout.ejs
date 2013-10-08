@@ -33,7 +33,17 @@
   </head>
 
   <body ng-app="dubatoApp">
-    <div class="container" ng-view=""></div>
+    <div ng-hide="logged">
+      <form action="" ng-controller="LoginCtrl" ng-submit="login($event)">
+        <input type="text" placeholder="username" ng-model="username">
+        <input type="password" ng-model="password">
+        <input type="submit" value="log" class="btn">
+        <div class="error" ng-show="logFailedStatus">
+          fail : {{ logFailedMessage }}
+        </div>
+      </form>
+    </div>
+    <div id="app" class="container" ng-view=""></div>
 
     <!--
         Client-side Templates
@@ -97,6 +107,8 @@
     <script src="/linker/app/bower_components/jquery/jquery.js"></script>
     <script src="/linker/app/bower_components/jquery.cookie/jquery.cookie.js"></script>
     <script src="/linker/app/scripts/app.js"></script>
+    <script src="/linker/app/scripts/controllers/Login.js"></script>
+    <script src="/linker/app/scripts/controllers/Post.js"></script>
     <script src="/linker/app/scripts/controllers/main.js"></script>
     <script src="/linker/app/scripts/services/Sails.js"></script>
     <!--SCRIPTS END-->

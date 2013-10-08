@@ -7,6 +7,10 @@ angular.module('dubatoApp', ['ngRoute'])
         templateUrl: ->
           'views/main.html'
         controller: 'MainCtrl'
+      .when '/Post',
+        templateUrl: 'views/Post.html',
+        controller: 'PostCtrl'
       .otherwise
         redirectTo: '/'
-  .run ->
+  .run ($rootScope, $location)->
+    console.log $location

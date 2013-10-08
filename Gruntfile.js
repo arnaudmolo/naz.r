@@ -68,7 +68,6 @@ module.exports = function (grunt) {
     'linker/app/bower_components/angular/angular.js',
 
     'linker/app/bower_components/angular-**/*.min.js',
-    
     'linker/app/bower_components/jquery/jquery.js',
     'linker/app/bower_components/jquery.cookie/jquery.cookie.js',
     'linker/js/**/*.js',

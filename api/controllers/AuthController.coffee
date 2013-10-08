@@ -2,18 +2,21 @@ passport = require("passport")
 
 module.exports =
   login: (req, res) ->
-    if req.method is 'GET'
-      return res.view message: 'coucou'
     passport.authenticate("local", (err, user, info) ->
-      return res.send err  if (err) or (not user)
+      return res.send {message: "login failed"}  if (err) or (not user)
       req.logIn user, (err) ->
-        res.send err  if err
+        return res.send {message: "login failed"}  if err
         res.send message: "login successful"
     ) req, res
 
   logout: (req, res) ->
     req.logout()
     res.send "logout successful"
+
+  logged: (req, res) ->
+    if req.session.passport.user
+      return res.json true
+    return res.json false
 
 module.exports.blueprints =
   action: true
