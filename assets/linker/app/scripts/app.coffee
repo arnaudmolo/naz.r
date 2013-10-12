@@ -1,13 +1,16 @@
 'use strict'
 
 angular.module('dubatoApp', ['ngRoute'])
-  .config ($routeProvider) ->
+  .config ($routeProvider, $locationProvider) ->
+
+    $locationProvider.html5Mode true
+
     $routeProvider
       .when '/',
         templateUrl: ->
           'views/main.html'
         controller: 'MainCtrl'
-      .when '/Post',
+      .when '/Posts',
         templateUrl: 'views/Post.html',
         controller: 'PostCtrl'
       .otherwise

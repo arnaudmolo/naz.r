@@ -26,8 +26,8 @@ module.exports.policies = {
   	'get logout': 'isAuthenticated'
   },
   'PostsController': {
-  	'*': false,
-  	'find': 'isAuthenticated'
+  	'*': true,
+  	//'find': 'isAuthenticated'
   }
   /*
 	// Here's an example of adding some policies to a controller
