@@ -39,6 +39,18 @@ module.exports.routes = {
   '/views/:file': {
     controller: 'ViewsController',
     action: 'ui'
+  },
+  'post /login': {
+    controller: 'AuthController',
+    action: 'login'
+  },
+  'get /login': {
+    controller: 'AuthController',
+    action: 'login'
+  },
+  'get /logout': {
+    controller: 'AuthController',
+    action: 'logout'
   }
 
   /*

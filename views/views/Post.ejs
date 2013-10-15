@@ -1,0 +1,10 @@
+<div>
+  <h1>blog posts</h1>
+  <section>
+    <article ng-repeat="post in posts">
+      <h1>{{ post.title }}</h1>
+      <section ng-bind-html="post.content">
+      </section>
+      </article>
+  </section>
+</div>

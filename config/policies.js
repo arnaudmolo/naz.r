@@ -16,8 +16,19 @@ module.exports.policies = {
 
   // Default policy for all controllers and actions
   // (`true` allows public access) 
-  '*': true
-
+  '*': true,
+  'UserController': {
+  	'*': 'isAuthenticated',
+  	'create': true
+  },
+  'AuthController': {
+  	'post login': true,
+  	'get logout': 'isAuthenticated'
+  },
+  'PostsController': {
+  	'*': true,
+  	//'find': 'isAuthenticated'
+  }
   /*
 	// Here's an example of adding some policies to a controller
 	RabbitController: {
