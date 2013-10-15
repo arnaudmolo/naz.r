@@ -1,0 +1,13 @@
+<div>
+  la vue
+  <h1>blog posts</h1>
+  <section>
+    <article ng-repeat="post in posts">
+      <% for(var i=0; i<posts.length; i++) {%>
+      <h1 ng-bind-template="{{ post.title }}"> <%- posts[i].title %> </h1>
+      <section ng-bind-html="post.content">
+      </section>
+      <% } %>
+      </article>
+  </section>
+</div>

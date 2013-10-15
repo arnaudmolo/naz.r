@@ -1,19 +1,19 @@
 'use strict'
 
-describe 'Controller: MainCtrl', () ->
+describe 'Controller: PostCtrl', () ->
 
   # load the controller's module
   beforeEach module 'dubatoApp'
 
-  MainCtrl = {}
+  PostCtrl = {}
   scope = {}
 
   # Initialize the controller and a mock scope
   beforeEach inject ($controller, $rootScope) ->
     scope = $rootScope.$new()
-    MainCtrl = $controller 'MainCtrl', {
+    PostCtrl = $controller 'PostCtrl', {
       $scope: scope
     }
 
-  it 'should be true', (done) ->
+  it 'should be true', () ->
     expect(true).toBe true
