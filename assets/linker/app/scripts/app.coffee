@@ -1,10 +1,8 @@
 'use strict'
 
 angular.module('dubatoApp', ['ngRoute'])
-  .config ($routeProvider, $locationProvider) ->
-
-    $locationProvider.html5Mode true
-
+  .config(['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->
+    $locationProvider.hashPrefix '!'
     $routeProvider
       .when '/',
         templateUrl: ->
@@ -15,5 +13,5 @@ angular.module('dubatoApp', ['ngRoute'])
         controller: 'PostCtrl'
       .otherwise
         redirectTo: '/'
-  .run ($rootScope, $location)->
+  ]).run ($rootScope, $location)->
     console.log $location
