@@ -1,0 +1,8 @@
+  <form ng-submit="getCommitData()">
+    User: <input ng-model="user"></input>
+    Repo: <input ng-model="repo"></input>
+    <input type="submit" value="Get Data">
+    Grouped <input type="checkbox" ng-model="grouped">
+  </form>
+
+  <gh-visualization val="data"></gh-visualization>
